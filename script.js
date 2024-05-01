@@ -11,7 +11,7 @@ class SocialMediaApp {
   
     async init() {
       if (!this.userData) {
-        window.location.href = "Login/login.html";
+        window.location.href = "./Login/login.html";
         return;
       }
   

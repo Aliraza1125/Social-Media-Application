@@ -52,7 +52,7 @@ class UserRenderer {
   }
 
   redirectToUserProfile(userId) {
-    window.location.href = `userProfile/profile.html?userId=${userId}`;
+    window.location.href = `./userProfile/profile.html?userId=${userId}`;
   }
 }
 

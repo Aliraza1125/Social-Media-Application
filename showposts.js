@@ -61,7 +61,7 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                       }" alt="User Avatar" class="w-full h-full object-cover p-0.5 border-red  border-2 rounded-full" />
                         </div>
                         <div class="">
-                        <a href="userProfile/profile.html?userId=${user.id}">
+                        <a href="./userProfile/profile.html?userId=${user.id}">
                           <h1 class="cursor-pointer text-sm font-semibold text-[#262626] hover:text-[#c7c7c7]" onclick="profile.html?userId=${user.id
                       }">${user.username}</h1>
 
@@ -98,7 +98,7 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                     <span class="mx-2">Liked by <span class="font-semibold">${user.username
                       } </span> and ${post.reactions} others</span>
                     <div class="my-2 mx-2">
-                    <a href="userProfile/profile.html?userId=${user.id}">
+                    <a href="./userProfile/profile.html?userId=${user.id}">
                     <span class="cursor-pointer text-sm font-semibold text-[#262626] hover:text-[#c7c7c7]"> ${user.username
                       }  </span>
                       </a>
@@ -115,7 +115,7 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                          
                  </div>
                  <div id="loading" class="flex justify-center items-center w-full ml-12" style="display: none;">
-                 <img src="assets/loader.gif" alt="" class="w-8">
+                 <img src="./assets/loader.gif" alt="" class="w-8">
              </div>
                  <div class="comment-layout mx-2 my-4 flex justify-between items-center">
                  <input id="comment-input" type="text" placeholder="Add a comment..." class="comment-input w-full focus:outline-none text-[#737373]">
