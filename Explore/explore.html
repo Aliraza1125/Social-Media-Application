@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Explore</title>
+    <style>
+          * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+        .element-with-gradient {
+            background-image: linear-gradient(to bottom, #ffd600, #ff0100, #d800b9);
+        }
+
+        .element-with-gradient-to-left {
+            background-image: linear-gradient(to left, #ffd600, #ff0100, #d800b9);
+            -webkit-background-clip: text;
+            /* For Safari */
+            background-clip: text;
+            color: transparent;
+        }
+
+        .element-with-gradient-to-right {
+            background-image: linear-gradient(to right, #ffd600, #ff0100, #d800b9);
+        }
+    </style>
+</head>
+
+<body class="h-full">
+    <!-- nav -->
+    <nav class="flex items-center bg-white py-2 lg:px-[50px] ">
+        <div class="rounded-sm w-[23%] text-center">
+          <a href="/index.html" class="text-3xl font-semibold element-with-gradient-to-left">InstaVista</a>
+        </div>
+        <div class="flex justify-between items-center w-[52%] px-2">
+    
+    <div >
+
+    </div>
+          <div class="relative hidden lg:hidden">
+            <form class="flex justify-between" id="navSearch">
+              <div class="flex items-center bg-gray-200 rounded-full w-[400px] p-2 gap-3">
+                <button id="searchButton" type="button" class="text-blue-500 focus:outline-none">
+                  <i class="fas fa-search"></i>
+                </button>
+                <input id="searchInput" type="search" placeholder="Search For Post's"
+                  class="placeholder:text-content w-full bg-transparent outline-none px-3" />
+              </div>
+            </form>
+          </div>
+    
+            <div class="flex justify-between items-center ">
+              <div class="cursor-pointer hidden lg:block">
+                <abbr title="Notification">
+                  <button id="notificationBtn" class="text-gray-500 focus:outline-none">
+                    <svg class="h-8 w-8 text-content" width="16" height="16" viewBox="0 0 24 24" strokeWidth="1"
+                      stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" />
+                      <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                      <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                    </svg>
+                  </button>
+                </abbr>
+              </div>
+    
+              <div class="cursor-pointer hidden lg:block">
+                <abbr title="Dark Mode">
+                  <button id="darkModeBtn" class="text-gray-500 focus:outline-none ml-4">
+                    <svg class="cursor-pointer h-6 w-6 text-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </button>
+                </abbr>
+              </div>
+    
+              <div class="cursor-pointer hidden lg:block">
+                <abbr title="Inbox">
+                  <button id="messageBtn" class="text-gray-500 focus:outline-none ml-4">
+                    <svg class="h-8 w-6 text-content" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"
+                      strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                  </button>
+                </abbr>
+              </div>
+    
+    
+            </div>
+     
+    </div>
+    
+          <div class=" hidden lg:block w-[25%] text-center1  ">
+            <div
+              class='md:flex border-gray-100 border-2 hidden element-with-gradient-to-right cursor-pointer text-center dflex justify-center items-center  rounded-full w-[200px]'>
+              <svg class="text-white" width="16" height="16" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"
+                fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <span class='p-2 text-white'>Create New Post</span>
+            </div>
+    
+          </div>
+          <div class="ml-6 lg:hidden">
+            <button id="navbarDropdown" class="flex gap-2 items-center focus:outline-none" type="button"
+              data-dropdown-toggle="dropdown">
+              <div class="rounded-full w-12 bg-gray-100">
+                <img src="/assets/fake_profile_pic.jpg" alt="User Avatar" class="p-2" id="profilePic" />
+              </div>
+              <span id="usernamenav"></span>
+              <div>
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+              <!-- Placeholder for username -->
+            </button>
+            <div class="dropdown-menu absolute mt-3 w-[160px] bg-white rounded-md shadow-lg z-10 hidden"
+              aria-labelledby="navbarDropdown" id="dropdownMenu">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+              <div class="py-1">
+                <hr class="border-gray-200" />
+              </div>
+              <a href="/Login/login.html" id="signOut" class="block px-4 py-2 hover:bg-gray-100">Sign Out</a>
+            </div>
+          </div>
+      
+      </nav>
+    
+
+        <!-- Bottom Bar For Mobile-->
+  <div class="md:hidden sm:block block ">
+    <div class="z-50 fixed h-20 bg-white border-t-4 border-red-600 w-[100%] bottom-0">
+      <div class="flex h-full justify-around items-center mb-3">
+        <div class="relative w-10 h-full">
+          <a href="/index.html" class="flex h-full nav-link">
+            <div class="flex w-full items-center justify-center">
+              <svg aria-label="Home" class="_ab6- text-content" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="30"
+                role="img" viewBox="0 0 24 24" width="30">
+                <path
+                  d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z"
+                  fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="relative w-10 h-full">
+          <a href="#" class="flex h-full nav-link">
+            <div class="flex w-full items-center justify-center">
+              <svg aria-label="Explore" class="_ab6- text-content" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="30"
+                role="img" viewBox="0 0 24 24" width="30">
+                <polygon fill="none" points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
+                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                <polygon fill-rule="evenodd" points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon>
+                <circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"></circle>
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="relative w-10 h-full">
+          <a href="../Pages/page404.html" class="flex h-full nav-link">
+            <div class="flex w-full items-center justify-center">
+              <svg class="h-8 w-8 text-content" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2"
+                stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+                <path d="M21 3L14.5 21a.55 .55 0 0 1 -1 0L10 14L3 10.5a.55 .55 0 0 1 0 -1L21 3" />
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="relative w-10 h-full">
+          <a href="../userProfile/profile.html?userId=1" class="flex h-full nav-link">
+            <div class="flex w-full items-center justify-center">
+              <svg class="h-8 w-8 text-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                  d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Bar -->
+
+    <div id="main" class="bg-gray-200 flex flex-col lg:flex-row gap-3 px-5 lg:px-[50px] py-[10px] overflow-hidden h-screen">
+        <div id="leftBar" class="w-full lg:w-[23%] hidden lg:flex flex-col gap-2 bg-white  rounded-[10px] h-screen ">
+            <div class="">
+                <div id="first" class="flex flex-col justify-center items-center my-2">
+                    <div class="w-3/6 my-2 flex flex-col items-center">
+                        <div
+                            class="element-with-gradient w-[110px] h-[110px] p-1 rounded-full relative flex justify-center items-center">
+                            <img class="min-w-[100px] max-h-[100px] rounded-full border-4 border-white"
+                                src="/assets/fake_profile_pic.jpg" alt="" id="userProfilePic" />
+                            <div
+                                class="absolute bottom-1 border-4 cursor-pointer border-white right-0 element-with-gradient w-10 h-10 flex justify-center items-center rounded-full">
+                                <svg class="text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg cursor-pointer hover:text-[#c7c7c7]" id="username"></h3>
+                    <h5 class="text-sm" id="userEmail"></h5>
+                </div>
+                <div id="stats" class="flex gap-3 justify-center">
+                    <div class="flex flex-col items-center justify-center cursor-pointer">
+                        <h2 class="font-semibold text-lg" id="postsCount">3</h2>
+                        <h6>Posts</h6>
+                    </div>
+                    <div style="border: 1px solid black" class=""></div>
+                    <div class="flex flex-col items-center justify-center cursor-pointer">
+                        <h2 class="font-semibold text-lg">1.2K</h2>
+                        <h6>Followers</h6>
+                    </div>
+                    <div style="border: 1px solid black" class=""></div>
+                    <div class="flex flex-col items-center justify-center cursor-pointer">
+                        <h2 class="font-semibold text-lg">500</h2>
+                        <h6>Follwing</h6>
+                    </div>
+                </div>
+            </div>
+            <div id="nav" class="my-3 flex flex-col gap-1">
+                <div class="relative h-[60px]">
+                    <a href="/index.html" class="flex h-full nav-link">
+                        <div class="flex w-full items-center pl-12 mb-1">
+                            <svg aria-label="Home" class="_ab6- text-content" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)"
+                                height="30" role="img" viewBox="0 0 24 24" width="30">
+                                <path
+                                    d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z"
+                                    fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2"></path>
+                            </svg>
+                            <span class="text-lg pl-5">Home</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="relative h-[50px]">
+                    <a href="#" class="flex h-full nav-link navActive">
+                        <div class="flex w-full items-center pl-12 mb-1">
+                            <svg aria-label="Explore" class="_ab6- text-content" color="rgb(0, 0, 0)"
+                                fill="rgb(0, 0, 0)" height="30" role="img" viewBox="0 0 24 24" width="30">
+                                <polygon fill="none"
+                                    points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
+                                    stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                                </polygon>
+                                <polygon fillRule="evenodd"
+                                    points="10.06 10.056 13.949 13.945 7.581 16.424 10.06 10.056"></polygon>
+                                <circle cx="12.001" cy="12.005" fill="none" r="10.5" stroke="currentColor"
+                                    strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></circle>
+                            </svg>
+                            <span class="text-lg pl-5">Explore</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="relative h-[50px]">
+                    <a href="../Pages/page404.html" class="flex h-full nav-link">
+                        <div class="flex w-full items-center pl-12 mb-1" >
+                            <svg class="h-8 w-8 text-content" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2"
+                                stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                                <path d="M21 3L14.5 21a.55 .55 0 0 1 -1 0L10 14L3 10.5a.55 .55 0 0 1 0 -1L21 3" />
+                            </svg>
+                            <span class="text-lg pl-5">Activity</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="relative h-[50px]">
+                    <div id="profileLink2" class="cursor-pointer flex h-full nav-link">
+                        <div class="flex w-full items-center pl-12 mb-1">
+                            <svg class="h-8 w-8 text-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-lg pl-5">Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div className="relative h-[50px]">
+                    <div class="cursor-pointer flex h-full nav-link">
+                        <div class="flex w-full items-center pl-12">
+                            <svg class="h-8 w-8 text-content" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2"
+                                stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                                <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                            </svg>
+                            <span class="cursor-pointer text-lg pl-5" id="logOut2">LogOut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mainContent" class="bg-white w-full lg:w-[77%] flex flex-col gap-5 rounded-lg overflow-scroll no-scrollbar">
+            <div id="app" class="bg-white text-gray-900 w-full flex flex-col sm:p-10 p-5">
+                <h1 class="text-3xl mb-5">Explore:</h1>
+                <div id="grid-container" class="grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 gap-5"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ExplorePage.js"></script>
+</body>
+
+</html>
