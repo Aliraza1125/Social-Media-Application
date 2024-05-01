@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     </span>
                   </div>
                   <div class="comment-options cursor-pointer flex items-center gap-2">
-                  ${(comment.user.id === loggedInUserId)
+                  ${(comment.user.id === loggedInUserId || postUserId === loggedInUserId)
                     ? `
                         <button class="edit-comment-btn" data-comment-id="${comment.id}"><i class="fa-regular fa-pen-to-square text-[#737373] hover:text-[#c7c7c7]"></i></button>
                         <button class="delete-comment-btn" data-comment-id="${comment.id}"><i class="fa-solid fa-trash-can text-[#737373] hover:text-[#c7c7c7]"></i></button>

@@ -78,7 +78,7 @@ renderPosts();
 
 const LoggedInUserData = JSON.parse(localStorage.getItem("users"));
 if (!LoggedInUserData) {
-  window.location.href = "Login/login.html";
+  window.location.href = "../Login/login.html";
 }
 
 const userProfilePic = document.querySelector('#userProfilePic');
