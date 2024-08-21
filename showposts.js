@@ -76,8 +76,7 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                     </div>
                 
                     <div class="my-5 p-2">
-                     <img src="https://source.unsplash.com/random/${post.id
-                      }" alt="Post Image" class="h-[450px] object-cover w-full rounded-lg " />
+                     <img src="https://picsum.photos/200/300" alt="Post Image" class="h-[450px] object-cover w-full rounded-lg " />
                     </div>
                     <div class="flex justify-between items-center my-4 mx-3">
                       <div class="flex gap-5">
