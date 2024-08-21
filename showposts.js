@@ -76,7 +76,8 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                     </div>
                 
                     <div class="my-5 p-2">
-                     <img src="https://picsum.photos/200/300" alt="Post Image" class="h-[450px] object-cover w-full rounded-lg " />
+                     <img src="https://picsum.photos/200/300?random=${post.id
+                      }" alt="Post Image" class="h-[450px] object-cover w-full rounded-lg " />
                     </div>
                     <div class="flex justify-between items-center my-4 mx-3">
                       <div class="flex gap-5">
@@ -95,7 +96,7 @@ async function fetchPostsAndDisplay(searchQuery = "") {
                       </div>
                     </div>
                     <span class="mx-2">Liked by <span class="font-semibold">${user.username
-                      } </span> and ${post.reactions} others</span>
+                      } </span> and ${post.reactions.likes} others</span>
                     <div class="my-2 mx-2">
                     <a href="./userProfile/profile.html?userId=${user.id}">
                     <span class="cursor-pointer text-sm font-semibold text-[#262626] hover:text-[#c7c7c7]"> ${user.username
@@ -319,7 +320,7 @@ async function fetchAndDisplayComments(postId, commentBody = "") {
     if (Array.isArray(comments) && comments.length > 0) {
       modalBody.innerHTML += `
         <div class="my-5 p-2 w-full lg:w-[45%]  h-[450px]">
-          <img src="https://source.unsplash.com/random/${postId}" alt="Post Image" class="h-[420px] object-cover w-full" />
+          <img src="https://picsum.photos/200/300?random=${postId}" alt="Post Image" class="h-[420px] object-cover w-full" />
         </div>
       `;
 

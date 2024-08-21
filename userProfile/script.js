@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", async function () {
           <div class="w-1/3 p-px md:px-3">
           <a href="#" class="post-link" data-post-id="${post.id}">
             <article class="post bg-gray-100 text-white relative pb-full md:mb-6">
-              <img class="w-full h-full absolute left-0 top-0 object-cover" src="https://source.unsplash.com/random/${post.id}" alt="image">
+              <img class="w-full h-full absolute left-0 top-0 object-cover" src="https://loremflickr.com/200/200?random=${post.id}" alt="image">
               <i class="fas fa-square absolute right-0 top-0 m-1"></i>
               <div class="overlay bg-gray-800 bg-opacity-25 w-full h-full absolute left-0 top-0 hidden">
                 <div class="flex justify-center items-center space-x-4 h-full">
-                  <span class="p-2"><i class="fas fa-heart"></i> ${post.reactions}</span>
+                  <span class="p-2"><i class="fas fa-heart"></i> ${post.reactions.likes}</span>
                   <span class="p-2 comment-count"><i class="fas fa-comment"></i> ${numComments}</span>
                 </div>
               </div>
